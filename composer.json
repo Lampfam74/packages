@@ -1,0 +1,47 @@
+{
+    "name": "lampedev/security-suite",
+    "description": "Laravel Security Suite with WAF Middleware, Audit Logging and DevSecOps tools",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "security",
+        "waf",
+        "firewall",
+        "audit",
+        "logging",
+        "devsecops",
+        "middleware"
+    ],
+    "homepage": "https://github.com/Lampfam74/packages",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LampDevs",
+            "email": "contact@lampdevs.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lampedev\\SecuritySuite\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lampedev\\SecuritySuite\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lampedev\\SecuritySuite\\SecuritySuiteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
