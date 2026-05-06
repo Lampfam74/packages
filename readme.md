@@ -1,6 +1,6 @@
 # 📦 Laravel Backup Manager
 
-Laravel Backup Manager is a powerful and lightweight package developed by LampDevs to automate, secure, and manage full backups of Laravel applications.
+Laravel Backup Manager is a powerful and lightweight package developed by LampeDev to automate, secure, and manage full backups of Laravel applications.
 
 It enables developers and organizations to protect critical data, ensure system resilience, and simplify disaster recovery processes.
 
