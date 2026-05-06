@@ -1,0 +1,20 @@
+﻿{
+    "name": "lampdevs/auditlog",
+    "description": "Audit Log PRO Laravel Package (DevSecOps)",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Lampdevs\\AuditLog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lampdevs\\AuditLog\\AuditLogServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
