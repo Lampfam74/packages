@@ -1,15 +1,10 @@
-Voici un **README.md propre, professionnel et prêt Packagist/GitHub** pour ton package **Laravel Security Suite (WAF + Audit Log DevSecOps)** basé sur ton code et ton architecture 👇
 
----
-
-```markdown
 # 🔐 Laravel Security Suite
 
 Laravel Security Suite is a **DevSecOps-oriented security package** for Laravel applications developed by LampDevs.
 
 It provides a **Web Application Firewall (WAF)**, **Audit Logging**, and **security monitoring tools** to protect applications against common web attacks.
 
----
 
 ## 🎯 Objective
 
