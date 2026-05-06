@@ -58,17 +58,34 @@ This package aims to:
 
 The package follows Laravel standards and PSR-4 structure:
 
-``````
+# 📁 Project Structure
 
-src/
-├── Http/
-│   └── Middleware/
-│       └── WafMiddleware.php
-├── Services/
-│   └── WafService.php
-├── SecuritySuiteServiceProvider.php
-
-``````
+```
+C:.
+├── config
+├── database
+│   └── migrations
+├── routes
+├── security-suite
+│   ├── config
+│   ├── database
+│   │   └── migrations
+│   ├── routes
+│   └── src
+│       ├── Http
+│       │   └── Middleware
+│       ├── Models
+│       ├── Providers
+│       ├── Services
+│       └── Traits
+└── src
+    ├── Http
+    │   └── Middleware
+    ├── Models
+    ├── Providers
+    ├── Services
+    └── Traits
+```
 
 ---
 
