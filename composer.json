@@ -38,7 +38,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lampedev\\SecuritySuite\\SecuritySuiteServiceProvider"
+                "Lampedev\\SecuritySuite\\Providers\\SecuritySuiteServiceProvider"
             ]
         }
     },
