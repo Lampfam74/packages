@@ -87,7 +87,7 @@ Laravel Backup Manager is designed as a modern solution where backup is not just
 
 ## 🤝 Author
 
-**LampDevs**  
+**LampeDev**  
 ERP & DevSecOps Solutions
 
 ---
