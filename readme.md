@@ -58,7 +58,7 @@ This package aims to:
 
 The package follows Laravel standards and PSR-4 structure:
 
-```
+``````
 
 src/
 ├── Http/
@@ -68,7 +68,7 @@ src/
 │   └── WafService.php
 ├── SecuritySuiteServiceProvider.php
 
-````
+``````
 
 ---
 
