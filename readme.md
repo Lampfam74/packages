@@ -1,97 +1,180 @@
-# 📦 Laravel Backup Manager
+Voici ton **README.md en pur Markdown (propre, prêt Packagist / GitHub)** 👇
+# Laravel Backup Manager
 
-Laravel Backup Manager is a powerful and lightweight package developed by LampeDev to automate, secure, and manage full backups of Laravel applications.
+A simple and powerful Laravel package to automate full project backups.
 
-It enables developers and organizations to protect critical data, ensure system resilience, and simplify disaster recovery processes.
+It allows you to backup:
 
----
-
-## 🎯 Objective
-
-The main goal of this package is to:
-
-- Ensure **data availability**
-- Prevent **data loss**
-- Automate **backup processes**
-- Enhance **data security**
-- Support **disaster recovery strategies**
+- 🗄 Database (MySQL / PostgreSQL)
+- 📁 Laravel application files
+- 💾 Storage folder
+- ⚙️ .env file
+- 📦 Automatic ZIP compression
+- ⏰ Scheduler support
 
 ---
 
-## ⚙️ How It Works
+# 🚀 Features
 
-The package follows a structured backup workflow:
-
-1. Export the database (MySQL / PostgreSQL)
-2. Collect critical Laravel files:
-   - `app/`
-   - `storage/`
-   - `.env`
-3. Compress all data into a ZIP archive
-4. Store backups in a secure location
-5. Automatically clean old backups based on retention policy
+- Full database backup (MySQL / PostgreSQL)
+- Backup of Laravel project files
+- Secure `.env` backup
+- ZIP compression support
+- Artisan command integration
+- Scheduler (cron ready)
+- Lightweight & fast
 
 ---
 
-## 🧱 Technical Architecture
+# 📥 Installation
 
-Laravel Backup Manager integrates seamlessly with the Laravel ecosystem and relies on:
+Install via Composer:
 
-- Artisan Commands
-- Laravel Scheduler (cron jobs)
-- Laravel Filesystem
-- System tools (`mysqldump`, `pg_dump`)
-- PHP `ZipArchive`
+```bash
+composer require lampdevs/backup
+````
 
 ---
 
-## 🔐 Security Approach
+# ⚙️ Publish Configuration
 
-This package follows a DevSecOps-oriented approach:
-
-- Protection of sensitive data (`.env`, database)
-- Secure storage outside public directories
-- Backup retention management
-- Optional encryption support
-- Compatibility with secure external storage systems
+```bash
+php artisan vendor:publish --tag=backup-config
+```
 
 ---
 
-## 🚀 Use Cases
+# 🧠 Usage
 
-This package is ideal for:
+Run backup manually:
 
-- Production Laravel applications
-- ERP, HR, and critical systems
-- DevSecOps environments
-- Organizations requiring automated backups
-- Startups, SMEs, and public institutions
+```bash
+php artisan lamp:backup
+```
 
 ---
 
-## 📈 Value Proposition
+# ⏰ Scheduler (Automatic Backup)
 
-- Simple and intuitive usage
-- Fully automated backups
-- Lightweight and fast
-- Extensible (cloud, encryption, restore)
-- CI/CD compatible
+Add this to `app/Console/Kernel.php`:
 
----
-
-## 🧠 Vision
-
-Laravel Backup Manager is designed as a modern solution where backup is not just a feature, but a core component of **cybersecurity and system resilience**.
+```php
+protected function schedule($schedule)
+{
+    $schedule->command('lamp:backup')->daily();
+}
+```
 
 ---
 
-## 🤝 Author
+# 📁 Backup Output
 
-**LampeDev**  
+Backups are stored in:
+
+```text
+storage/app/backups/
+```
+
+Example:
+
+```text
+backup-2026-04-22-120000.zip
+```
+
+Inside ZIP:
+
+```text
+database.sql
+.env
+storage/
+app/
+```
+
+---
+
+# ⚙️ Configuration
+
+File: `config/backup.php`
+
+```php
+return [
+    'path' => storage_path('app/backups'),
+    'database' => true,
+    'files' => true,
+    'zip' => true,
+    'keep_days' => 7,
+];
+```
+
+---
+
+# 🔐 Security Notes
+
+* Never expose `.env`
+* Use scheduler in production
+* Store backups outside public directory
+* Protect backup folder with server rules
+
+---
+
+# 🧪 Requirements
+
+* PHP >= 8.2
+* Laravel >= 10
+* ZipArchive enabled
+* mysqldump / pg_dump available
+
+---
+
+# 🛠 Example Command
+
+```bash
+php artisan lamp:backup
+```
+
+Output:
+
+```text
+Backup started...
+Database backed up
+Storage backed up
+ZIP created
+Backup completed successfully
+```
+
+---
+
+# 📌 Roadmap
+
+* Cloud storage (AWS S3 / Google Drive)
+* Backup encryption
+* Restore command
+* Web dashboard UI
+* Email / Slack notifications
+
+---
+
+# 🤝 Author
+
+**LampDevs**
 ERP & DevSecOps Solutions
 
 ---
 
-## 📄 License
+# 📄 License
 
 MIT License
+
+```
+
+---
+
+Si tu veux, je peux maintenant te faire :
+
+👉 Packagist-ready GitHub repo structure  
+👉 ServiceProvider + auto-discovery clean  
+👉 Restore system (`php artisan lamp:restore`)  
+👉 Cloud backup (S3 / FTP / Google Drive)
+
+Dis juste : **“upgrade package pro”** 🚀
+```
