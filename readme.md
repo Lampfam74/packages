@@ -1,220 +1,151 @@
+# 🧩 LampDevs Laravel Packages (Monorepo)
 
-# 🔐 Laravel Security Suite
+This repository contains a **collection of Laravel packages** developed by LampDevs, focused on:
 
-Laravel Security Suite is a **DevSecOps-oriented security package** for Laravel applications developed by LampDevs.
+- 🔐 Security (WAF, Firewall, Protection)
+- 📜 Audit & Logging
+- 💾 Backup & Recovery
+- ⚙️ DevSecOps automation tools
 
-It provides a **Web Application Firewall (WAF)**, **Audit Logging**, and **security monitoring tools** to protect applications against common web attacks.
-
-
-## 🎯 Objective
-
-This package aims to:
-
-- 🛡️ Protect Laravel applications from attacks (SQLi, XSS, etc.)
-- 🔍 Monitor and log security events
-- 🚫 Block malicious IPs dynamically
-- 📊 Provide audit trail for compliance
-- ⚙️ Integrate security at middleware level
+It is designed as a **modular Laravel ecosystem** for production-grade applications.
 
 ---
 
-## ⚙️ Features
+# 🚀 Project Vision
 
-### 🔥 Web Application Firewall (WAF)
+The goal of this monorepo is to build a **complete Laravel Security & DevSecOps suite**, including:
 
-- Detects malicious requests
-- Blocks suspicious IP addresses
-- Prevents common attacks:
-  - SQL Injection
-  - XSS (Cross-Site Scripting)
-  - Command Injection
-  - Path Traversal
+- Application security hardening
+- Real-time attack detection
+- Audit logging & compliance tracking
+- Backup automation
+- Extensible security services
 
 ---
 
-### 📜 Audit Logging System
-
-- Tracks user and system actions
-- Logs security events
-- Stores attack attempts
-- Supports future integration with SIEM systems
-
----
-
-### 🚫 IP Protection System
-
-- Automatic IP blocking
-- Blacklist management
-- Real-time request filtering
-
----
-
-## 🧱 Architecture
-
-The package follows Laravel standards and PSR-4 structure:
-
-# 📁 Project Structure
+# 📦 Repository Structure
 
 ```
-C:.
-├── config
-├── database
-│   └── migrations
-├── routes
-├── security-suite
-│   ├── config
-│   ├── database
-│   │   └── migrations
-│   ├── routes
-│   └── src
-│       ├── Http
-│       │   └── Middleware
-│       ├── Models
-│       ├── Providers
-│       ├── Services
-│       └── Traits
-└── src
-    ├── Http
-    │   └── Middleware
-    ├── Models
-    ├── Providers
-    ├── Services
-    └── Traits
+packages/
+├── config/
+├── database/
+│   └── migrations/
+├── routes/
+│
+├── security-suite/
+│   ├── config/
+│   ├── database/
+│   │   └── migrations/
+│   ├── routes/
+│   └── src/
+│       ├── Http/
+│       │   └── Middleware/
+│       ├── Models/
+│       ├── Providers/
+│       ├── Services/
+│       └── Traits/
+│
+└── src/
+    ├── Http/
+    │   └── Middleware/
+    ├── Models/
+    ├── Providers/
+    ├── Services/
+    └── Traits/
 ```
 
 ---
 
-## 📦 Installation
+# 🔐 Included Packages
 
-Install via Composer:
+## 1. Security Suite (WAF + Audit System)
+
+A **Laravel security engine** that provides:
+
+### 🛡 Features
+- Web Application Firewall (WAF)
+- Attack detection (SQLi, XSS, RCE)
+- IP blocking system
+- Security event logging
+- Audit trail support
+
+### ⚙ Core Components
+- `WafMiddleware`
+- `WafService`
+- `BlockedIp Model`
+
+---
+
+## 2. (Future Packages)
+
+This monorepo will expand with:
+
+- 💾 Backup Manager (auto backup system)
+- 📊 Security Dashboard (admin panel)
+- 🔔 Alert system (email / Slack / webhook)
+- 🧠 AI anomaly detection engine
+
+---
+
+# ⚙️ Architecture Principles
+
+This project follows:
+
+- PSR-4 autoloading standard
+- Laravel Service Container
+- Middleware-based security layer
+- Modular package architecture
+- DevSecOps best practices
+
+---
+
+# 🔐 DevSecOps Approach
+
+Security is integrated at all levels:
+
+- Input validation & inspection
+- Request pattern detection
+- Real-time IP blocking
+- Logging for audit compliance
+- Extensible security services
+
+---
+
+# 📦 Installation (example per package)
 
 ```bash
 composer require lampedev/security-suite
-````
-
----
-
-## ⚙️ Service Provider
-
-Auto-discovered by Laravel, but you can manually register it if needed:
-
-```php
-Lampedev\SecuritySuite\SecuritySuiteServiceProvider::class;
 ```
 
 ---
 
-## 🛡️ Usage
+# 🧠 Design Philosophy
 
-### 1. Register Middleware
+This repository is built with the idea that:
 
-In `app/Http/Kernel.php`:
-
-```php
-protected $middleware = [
-    \Lampedev\SecuritySuite\Http\Middleware\WafMiddleware::class,
-];
-```
+> Security is not a feature — it is a foundation.
 
 ---
 
-### 2. WAF Protection in Action
+# 🚀 Roadmap
 
-The middleware will automatically:
-
-* Check IP blacklist
-* Detect attack patterns
-* Block malicious requests
-
----
-
-### 3. Example Behavior
-
-```text
-🚫 Access denied by WAF (IP blocked)
-🚨 Malicious request detected and blocked
-```
+- [ ] Central security dashboard
+- [ ] Redis-based blacklist system
+- [ ] Rate limiting engine
+- [ ] Geo-blocking module
+- [ ] SIEM integration (Wazuh / ELK)
+- [ ] AI-based attack detection
+- [ ] Cloud backup integration
 
 ---
 
-## 🔐 Security Logic
+# 🤝 Maintainer
 
-The WAF engine performs:
-
-* Pattern matching detection
-* IP filtering
-* Request inspection
-* Attack classification
-
----
-
-## 🚀 Use Cases
-
-* ERP systems
-* HR / Pointage applications
-* E-commerce platforms
-* Government systems
-* SaaS applications
-* DevSecOps pipelines
-
----
-
-## 📈 Roadmap
-
-* [ ] Redis-based IP blacklist
-* [ ] Admin dashboard (security center)
-* [ ] Rate limiting advanced engine
-* [ ] SIEM integration (Wazuh / ELK)
-* [ ] AI-based anomaly detection
-* [ ] Geo-blocking system
-* [ ] Real-time alerts (Slack / Email)
-
----
-
-## 🧠 DevSecOps Vision
-
-This package is designed as a **lightweight Laravel security layer**, bringing:
-
-* Security by design
-* Continuous monitoring
-* Application hardening
-* Real-time threat mitigation
-
----
-
-## 🤝 Author
-
-**LampDevs**
+**LampDevs**  
 ERP & DevSecOps Solutions
 
 ---
 
-## 📄 License
+# 📄 License
 
 MIT License
-
----
-
-## ⚠️ Important Notes
-
-* Always use HTTPS in production
-* Combine with Laravel rate limiting
-* Do not expose logs publicly
-* Regularly update attack patterns database
-
-```
-
----
-
-# 🔥 Si tu veux aller encore plus loin
-
-Je peux te faire :
-
-👉 WafService complet (SQLi/XSS engine réel)  
-👉 Admin dashboard sécurité Laravel  
-👉 Middleware stack multi-layer (WAF + RateLimit + AuthGuard)  
-👉 Version “Cloudflare-like Laravel internal firewall”  
-👉 CI/CD DevSecOps pipeline (GitHub Actions + Snyk + SonarQube)
-
-Dis juste 👍
-```
